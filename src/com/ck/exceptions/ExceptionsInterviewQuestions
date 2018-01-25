@@ -1,2 +1,6 @@
 1) Default Exceptions handler can handle only one exception at a time. That is the most recently occurred exception.
    Like.. if AE in try{} and NPE in finally{}, then, exception we can see is NPE only and not AE.
+   
+2) if e is null, throw e will give you NPE. (NOTE : this occurs even if you declare static AE e. since static value is not assigned and is initially null.)
+
+3) if AE occurred in try{} and throw new NPE() in finally{} , then NPE is the exception occurred. This is re-throwing an exception.
