@@ -1,0 +1,2 @@
+1) Default Exceptions handler can handle only one exception at a time. That is the most recently occurred exception.
+   Like.. if AE in try{} and NPE in finally{}, then, exception we can see is NPE only and not AE.
