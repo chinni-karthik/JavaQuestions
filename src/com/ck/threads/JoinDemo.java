@@ -1,45 +1,25 @@
 package com.ck.threads;
 
-//This is wrong. Fix it...!!!
-
+//Note : The thread that wants to wait has to call join(), on the thread object that it is ready to wait for. 
+//Very simple. Did not know why you got confused...!!!
 public class JoinDemo {
-	public static void main(String[] args) {
-		Thread t=new VenueFixingThread();
+	public static void main(String[] args) throws InterruptedException {
+		Thread t = new MyThreadJoinDemo();
 		t.start();
-		System.out.println("MainThread...!!!");
-	}
-	
-}
-
-class VenueFixingThread extends Thread {
-	public void run() {
-		InvitationCardsPrintingThread cardsPrintingThread = new InvitationCardsPrintingThread();
-		cardsPrintingThread.start();
-		System.out.println("VenueFixingThread...!!!");
-	}
-}
-
-class InvitationCardsPrintingThread extends Thread {
-	
-	public void run() {
-		VenueFixingThread venueFixingThread = new VenueFixingThread();
-		try {
-			venueFixingThread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		t.join();//Rama has to wait until sita completes her execution. Hence, rama called join() on sita Thread.
+		for (int i = 0; i < 10; i++) {
+			System.out.println("Rama Thread");
 		}
-		System.out.println("InvitationCardsPrintingThread...!!!");
 	}
 }
 
-class MarriageThread extends Thread {
+class MyThreadJoinDemo extends Thread {
 	public void run() {
-		InvitationCardsPrintingThread cardsPrintingThread = new InvitationCardsPrintingThread();
-		try {
-			cardsPrintingThread.join();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		for (int i = 0; i < 10; i++) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {}
+			System.out.println("Sita Thread");
 		}
-		System.out.println("MarriageThread");
 	}
 }
