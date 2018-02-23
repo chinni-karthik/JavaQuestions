@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class HashMapNullExample {
 	public static void main(String[] args) {
-		HashMap<Employee, String> map = new HashMap<>();
+		HashMap<Employee, String> map = new HashMap<Employee, String>();
 		map.put(new Employee(1, "Karthik"), "one");
 		map.put(new Employee(2, "Venkat"), "two");
 		map.put(new Employee(3, "Mukesh"), "Three");
