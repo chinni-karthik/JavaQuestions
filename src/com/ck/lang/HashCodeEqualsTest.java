@@ -10,7 +10,7 @@ public class HashCodeEqualsTest {
 		System.out.println(emp1.hashCode());//729167542
 		System.out.println(emp2.hashCode());//729167542
 		
-		HashMap<Employee,Integer> hashMap=new HashMap<>();
+		HashMap<Employee,Integer> hashMap=new HashMap<Employee,Integer>();
 		hashMap.put(emp1, 1);
 		hashMap.put(emp2, 2);
 		hashMap.put(emp2, 1000);
