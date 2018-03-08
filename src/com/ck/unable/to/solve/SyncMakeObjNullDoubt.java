@@ -13,7 +13,7 @@ public class SyncMakeObjNullDoubt {
 	public void syncTest() {
 		Object obj = new Object();
 		//In this block, the thread has the lock of obj and can modify it to whatever it wants to.
-		//In this block, NPE will never be occuring...!!!
+		//In this block, NPE will never be occurring...!!!
 		synchronized (obj) {
 			System.out.println("Before null...");
 			obj = null;

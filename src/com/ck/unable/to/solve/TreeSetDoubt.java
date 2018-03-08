@@ -18,7 +18,7 @@ public class TreeSetDoubt {
 		ts.put(new Person(1,"Venkat"),"Two");
 		ts.put(new Person(1,"Mukesh"),"Three");
 		ts.put(new Person(1,"Annavaram"),"Four");
-		System.out.println(ts.size());
+		System.out.println(ts.size());//1 -->> as compareTo() returns 0 always.
 		System.out.println(ts);
 		
 	}
@@ -36,6 +36,6 @@ class Person implements Comparable<Person> {
 
 	@Override
 	public int compareTo(Person obj1) {
-		return -1;
+		return 0;
 	}
 }
